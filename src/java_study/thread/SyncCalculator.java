@@ -1,6 +1,6 @@
-package java;
+package java_study.thread;
 
-public class Calculator {
+public class SyncCalculator {
 
     private int memory;
 
@@ -19,9 +19,9 @@ public class Calculator {
 //        System.out.println("Current Memory: " + this.memory);
 //    }
 
-    public void setMemory(int memory) {
+    //sync를 메소드에다가 걸면 해당 필드와 메소드가 잠금됨
+    public void setMemory(Thread thread) {
         synchronized (this) {
-            this.memory = memory;
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {}
