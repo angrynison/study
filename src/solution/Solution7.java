@@ -23,7 +23,7 @@ public class Solution7 {
         int fin_node = 1;
         int sum = 1;
 
-        while(start_node < n &&  fin_node < n) {
+        while(start_node < n || fin_node < n) {
             if (sum < n) {
                 fin_node++;
                 sum += arr[fin_node];
