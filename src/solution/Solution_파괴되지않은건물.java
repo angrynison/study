@@ -22,18 +22,21 @@ public class Solution_파괴되지않은건물 {
                 } else if (skill[i][0] == 2) {
                     degree = skill[i][5];
                 }
+                // 4점만 찍기
                 skill_sum[x1][y1] += degree;
                 skill_sum[x1][y2+1] -= degree;
                 skill_sum[x2+1][y1] -= degree;
                 skill_sum[x2+1][y2+1] += degree;
             }
 
+            // 핵심으로 물감처럼 번지는걸 생각 x 좌표
             for (int i = 0; i <= n; i++) {
                 for (int j = 1; j <= m; j++) {
                     skill_sum[i][j] = skill_sum[i][j] + skill_sum[i][j-1];
                 }
             }
 
+            // y 좌표
             for (int i = 1; i <= n; i++) {
                 for (int j = 0; j <= m; j++) {
                     skill_sum[i][j] = skill_sum[i][j] + skill_sum[i-1][j];
