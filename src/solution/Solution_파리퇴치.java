@@ -15,15 +15,14 @@ class Solution_파리퇴치
 
         for (int test_case = 1; test_case <= T; test_case++)
         {
-            // 테스트 케이스마다 "n m" 줄을 새로 읽기
             StringTokenizer st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
             int m = Integer.parseInt(st.nextToken());
 
-            // 테스트 케이스마다 배열 새로 만들기
             int[][] board = new int[n + 1][n + 1];
             int[][] sum = new int[n + 1][n + 1];
 
+            // 2차원 구간합
             for (int i = 1; i <= n; i++) {
                 st = new StringTokenizer(br.readLine());
                 for (int j = 1; j <= n; j++) {
@@ -33,7 +32,7 @@ class Solution_파리퇴치
             }
 
             int max = 0;
-            // i, j = 파리채 왼쪽 위 / 오른쪽 아래 = (i+m-1, j+m-1)
+            // i, j = 파리채 왼쪽 위,오른쪽 아래 = (i+m-1, j+m-1)
             for (int i = 1; i <= n - m + 1; i++) {
                 for (int j = 1; j <= n - m + 1; j++) {
                     int x2 = i + m - 1;
